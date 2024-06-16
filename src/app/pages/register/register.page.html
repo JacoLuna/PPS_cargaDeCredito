@@ -1,0 +1,105 @@
+<ion-content [fullscreen]="true" class="component">
+  <div class="bg-image"></div>
+  <div class="register-container">
+    <form>
+      <h1>registrarse</h1>
+
+      <div id="content">
+        <div id="buttons" class="content-divs">
+          <ion-button
+            (click)="llenarCampos()"
+            expand="block"
+            fill="fill"
+            color="dark"
+            class="btnregister"
+            shape="round"
+            id="btnregister"
+            size="medium"
+            >Llenar campos</ion-button
+          >
+          <ion-button
+            (click)="registerUser()"
+            expand="block"
+            type="submit"
+            fill="fill"
+            color="dark"
+            class="btnregister"
+            shape="round"
+            id="btnregister"
+            size="medium"
+            >Iniciar sesión</ion-button
+          >
+        </div>
+        <div id="inputs" class="content-divs">
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input
+              type="input"
+              name="nombre"
+              [(ngModel)]="nombre"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input
+              type="input"
+              name="apellido"
+              [(ngModel)]="apellido"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Alias</ion-label>
+            <ion-input
+              type="input"
+              name="alias"
+              [(ngModel)]="alias"
+              required
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input
+              type="input"
+              name="email"
+              [(ngModel)]="email"
+              required
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input
+              type="password"
+              name="password"
+              [(ngModel)]="pass"
+              required
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input
+              type="password"
+              name="password"
+              [(ngModel)]="repatedPass"
+              required
+            ></ion-input>
+          </ion-item>
+        </div>
+      </div>
+
+      <ion-toast
+        message="usuario inválido"
+        [duration]="2000"
+        [isOpen]="isToastOpen"
+        color="danger"
+      ></ion-toast>
+      <p class="register-link">
+        ¿ya tenes una cuenta? <a routerLink="/login">iniciá sesión aca</a>
+      </p>
+    </form>
+  </div>
+</ion-content>

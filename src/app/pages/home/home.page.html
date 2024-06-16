@@ -1,0 +1,50 @@
+@if(!cargando){
+
+<ion-header>
+  <ion-toolbar>
+    @if(user.rol == 'admin'){
+    <ion-title> Bienvenido admin {{user.alias}} </ion-title>
+    }@else{
+    <ion-title> Bienvenido {{user.alias}} </ion-title>
+    }
+  </ion-toolbar>
+
+  <ion-icon
+    name="exit-outline"
+    style="padding: 5px; font-size: 2rem"
+    (click)="logOut()"
+  >
+  </ion-icon>
+</ion-header>
+
+<ion-content>
+  <div class="creditos">
+    <p>Créditos</p>
+    <p id="credito">{{user.creditos}}</p>
+  </div>
+
+  <div id="buttons">
+    <ion-button
+      id="buttonCredito"
+      color=""
+      expand="full"
+      (click)="scan()"
+      shape="round"
+      >Escanear código</ion-button
+    >
+    <ion-button id="buttonLimpiar" expand="full" (click)="btnLimpiarClick()" shape="round"
+      >Limpiar Créditos</ion-button
+    >
+  </div>
+
+  <ion-alert
+    [isOpen]="isAlertOpen"
+    header="¿Desea borrar su crédito?"
+    [buttons]="alertButtons"
+    class="alert"
+  ></ion-alert>
+  
+</ion-content>
+}@else {
+<ion-spinner name="dots" color="terciary"></ion-spinner>
+}

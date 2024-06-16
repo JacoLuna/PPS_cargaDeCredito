@@ -1,0 +1,68 @@
+$color-yellow: #fbe261;
+
+* {
+  font-size: x-large;
+}
+.bg-image {
+  background-image: url("/assets/tarjeta.png");
+  filter: blur(10px);
+  height: 50%;
+  margin: 50% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.register-container {
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+    
+    h1 {
+      text-align: center;
+    }
+    ion-item {
+      box-sizing: border-box;
+      border-radius: 2%;
+    }
+    
+    #content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .content-divs {
+        margin: auto;
+      }
+      
+      #inputs {
+        // width: 70%;
+        ion-item{
+          margin: .5rem auto;
+        }
+      }
+
+      #buttons {
+        margin: auto;
+        ion-button{
+          margin: 2.5rem auto;
+          height: 15%;
+          // fc7766
+          --background: #d2d3d5;
+          --color: black;
+        }
+      }
+    }
+  }
+}
